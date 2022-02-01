@@ -64,36 +64,35 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <>
-        <div>
+        <div className="container-fluid d-flex flex-column align-items-center col-8 p-3">
           {/* IF API NOT REACH YET -> LOADING  */}
 
           {this.state.loading ? (
             <p>Loading...</p>
           ) : (
             <>
+              <h1 className="p-2">Country selector</h1>
               {/* BUTTONS  */}
 
-              <div className="d-flex">
-                <div className="align-items-center">
-                  <Button
-                    isSelected={this.state.name === "france"}
-                    onClick={this.getCountry}
-                  >
-                    France
-                  </Button>
-                  <Button
-                    isSelected={this.state.name === "brazil"}
-                    onClick={this.getCountry}
-                  >
-                    Brazil
-                  </Button>
-                  <Button
-                    isSelected={this.state.name === "croatia"}
-                    onClick={this.getCountry}
-                  >
-                    Croatia
-                  </Button>
-                </div>
+              <div className="p-2">
+                <Button
+                  isSelected={this.state.name === "france"}
+                  onClick={this.getCountry}
+                >
+                  France
+                </Button>
+                <Button
+                  isSelected={this.state.name === "brazil"}
+                  onClick={this.getCountry}
+                >
+                  Brazil
+                </Button>
+                <Button
+                  isSelected={this.state.name === "croatia"}
+                  onClick={this.getCountry}
+                >
+                  Croatia
+                </Button>
               </div>
 
               {/* CARDS */}
