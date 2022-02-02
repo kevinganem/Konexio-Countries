@@ -22,8 +22,8 @@ class App extends React.Component {
     this.isLoaded = this.isLoaded.bind(this);
   }
 
-  async isLoaded() {
-    await this.setState({ loading: false });
+  isLoaded() {
+    this.setState({ loading: false });
   }
 
   // GET FRANCE API FROM RESTCOUNTRIES
@@ -44,8 +44,8 @@ class App extends React.Component {
   }
 
   // GET COUNTRY API FROM RESTCOUNTRIES
-  async getCountry(country) {
-    await fetch(`https://restcountries.com/v3.1/name/${country}`)
+  getCountry(country) {
+    fetch(`https://restcountries.com/v3.1/name/${country}`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
